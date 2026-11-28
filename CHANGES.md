@@ -167,7 +167,7 @@ Los mockups (`design-mockups`) son prerrequisito de cada change visual: el Agent
   - `knowledge-base/09_decisiones_y_supuestos.md` DD-13, SU-01
 
 ### [C-02] `frontend-scaffolding`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (PR #4, merge 2172723)
 - **Responsable**: m1
 - **Resultado**: `npm run build` compila sin errores de tipos, y `vite dev` sirve un layout base con `tokens.css`.
 - **Zona**: `frontend/`, `.github/workflows/frontend.yml`
