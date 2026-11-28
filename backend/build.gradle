@@ -41,4 +41,6 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	// pgjdbc rechaza zonas como America/Buenos_Aires contra PostgreSQL 15; el sistema trabaja en UTC (RN-EX-02).
+	systemProperty 'user.timezone', 'UTC'
 }
