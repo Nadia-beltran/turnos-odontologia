@@ -1,0 +1,5 @@
+# Reenvío del mismo origen (DD-03), formato Netlify como referencia.
+# C-03 DEBE reemplazar BACKEND_POR_DEFINIR por la URL real del backend
+# (o traducir estas reglas al equivalente del hosting que se elija en PA-03).
+/api/*  https://BACKEND_POR_DEFINIR/api/:splat  200
+/*      /index.html                               200
