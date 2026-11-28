@@ -18,6 +18,11 @@ spring:
       hibernate:
         jdbc:
           time_zone: UTC       # se guarda en UTC (RN-EX-02)
+  mail:
+    properties:
+      mail.smtp.connectiontimeout: 10000   # ms; acota el envío con filas bloqueadas (design D3)
+      mail.smtp.timeout: 10000
+      mail.smtp.writetimeout: 10000
   flyway:
     enabled: true
     locations: classpath:db/migration
@@ -25,6 +30,12 @@ spring:
 
 app:
   timezone-default: ${APP_TIMEZONE_DEFAULT:America/Argentina/Buenos_Aires}
+  brand-name: Estudio Sonrisa   # nombre del producto en remitente y pie de los emails (DD-14)
+  tick:
+    programado: true            # false en tests: la tarea programada no compite con ellos
+    intervalo: PT5M
+  mail:
+    lote: 20                    # máximo de emails por corrida del procesador
 
 ---
 # Desarrollo local: PostgreSQL y Mailpit de docker-compose.yml
