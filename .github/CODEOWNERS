@@ -2,18 +2,18 @@
 # Format: <path> @primary-reviewer @backup-reviewer
 # Primary: Nadia (m1) · Backup: Noelia (m2). All members have a github handle.
 # Other PRs follow the roadmap rule: the owner of the next eligible ficha reviews.
-/backend/src/main/java/ar/turnos/shared/         @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/auth/           @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/consultorio/    @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/auditoria/      @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/turnos/         @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/pacientes/      @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/listaespera/    @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/clinica/        @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/notificaciones/ @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/reportes/       @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/java/ar/turnos/admin/          @Nadia-beltran @NoeliaLopezDiaz
-/backend/src/main/resources/                     @Nadia-beltran @NoeliaLopezDiaz
-/frontend/public/                                @Nadia-beltran @NoeliaLopezDiaz
-/frontend/src/pages/admin/                       @Nadia-beltran @NoeliaLopezDiaz
-/docs/                                           @Nadia-beltran @NoeliaLopezDiaz
+/backend/src/main/java/ar/turnos/shared/         @Nadia-beltran 
+/backend/src/main/java/ar/turnos/auth/           @Nadia-beltran 
+/backend/src/main/java/ar/turnos/consultorio/    @Nadia-beltran 
+/backend/src/main/java/ar/turnos/auditoria/      @Nadia-beltran 
+/backend/src/main/java/ar/turnos/turnos/         @Nadia-beltran 
+/backend/src/main/java/ar/turnos/pacientes/      @Nadia-beltran
+/backend/src/main/java/ar/turnos/listaespera/    @Nadia-beltran 
+/backend/src/main/java/ar/turnos/clinica/        @Nadia-beltran 
+/backend/src/main/java/ar/turnos/notificaciones/ @Nadia-beltran 
+/backend/src/main/java/ar/turnos/reportes/       @Nadia-beltran 
+/backend/src/main/java/ar/turnos/admin/          @Nadia-beltran 
+/backend/src/main/resources/                     @Nadia-beltran 
+/frontend/public/                                @Nadia-beltran 
+/frontend/src/pages/admin/                       @Nadia-beltran 
+/docs/                                           @Nadia-beltran 
