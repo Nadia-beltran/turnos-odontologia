@@ -209,7 +209,7 @@ Los mockups (`design-mockups`) son prerrequisito de cada change visual: el Agent
   - `knowledge-base/08_arquitectura_propuesta.md` §Variables de entorno
 
 ### [C-04] `tenancy-y-auditoria-base`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (PR #5, merge 4dac824)
 - **Responsable**: m2
 - **Resultado**: los tests de integración prueban que una entidad de un consultorio nunca es visible ni modificable desde otro, y que las acciones quedan en `auditoria`.
 - **Zona**: `backend/src/main/java/ar/turnos/shared/`, `backend/src/main/java/ar/turnos/auditoria/`, `backend/src/main/resources/db/migration/`
