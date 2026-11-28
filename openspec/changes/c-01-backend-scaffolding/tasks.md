@@ -11,7 +11,7 @@
 
 - [x] 2.1 Crear los 12 paquetes de módulo bajo `ar.turnos`, cada uno con un `package-info.java` que describe su responsabilidad (design D3), y verificar que `./gradlew compileJava` pasa
 - [x] 2.2 Escribir `application.yml` con las variables de entorno de `knowledge-base/08`, perfiles `dev` y `prod`, `ddl-auto: validate` y `problemdetails.enabled: true` (design D5 y D6). Verificar que el perfil `prod` sin `SPRING_DATASOURCE_URL` falla al arrancar con un mensaje claro
-- [ ] 2.3 Agregar `.env.example` sin valores reales y verificar que `.env` está en `.gitignore`
+- [x] 2.3 Agregar `.env.example` sin valores reales y verificar que `.env` está en `.gitignore`
 - [x] 2.4 Crear `docker-compose.yml` con `postgres:15` y Mailpit, con puertos y credenciales de desarrollo que coincidan con el perfil `dev`. Verificar la sintaxis con la validación YAML del CI o de un editor (Docker no está instalado en local)
 
 ## 3. Migraciones (spec `schema-migrations`)
