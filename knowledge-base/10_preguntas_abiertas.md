@@ -24,7 +24,7 @@
 
 | Código | Prioridad | Pregunta | Bloquea | Decisor |
 |---|---|---|---|---|
-| PA-03 | **Alta** | ¿Qué hosting gratuito se usa para frontend, backend y PostgreSQL, y qué proveedor de email? Debe soportar el reenvío de `/api`, la extensión `btree_gist` y una tarea programada o *keep-alive* (ver 11 y 12) | Primer despliegue | Equipo técnico |
+| PA-03 | **Alta** (resuelta en parte) | ~~Hosting gratuito de frontend, backend y PostgreSQL~~: resuelto por **DD-16** (Netlify, Render, Neon y cron-job.org). **Pendiente**: proveedor de email. Tiene que tener **API HTTP**, porque Render Free bloquea el SMTP saliente, y cumplir los criterios de 11 | C-05 (outbox de emails) | Equipo técnico |
 | PA-07 | **Alta** | Revisión legal: rol de encargado del tratamiento (Ley 25.326) y contrato con el consultorio, inscripción ante la AAIP, plazo de conservación de la historia clínica (Ley 26.529) e impacto de la Ley 27.706 | Lanzamiento con datos reales | Product owner y asesoría legal |
 | PA-08 | **Alta** | ¿Hay presupuesto para un dominio propio? Sin dominio no se pueden configurar SPF, DKIM y DMARC, y los emails tienen más probabilidad de caer en spam, lo que afecta al diferencial principal | Lanzamiento | Product owner |
 | PA-01 | **Alta** | Límites del plan gratuito (turnos por mes, emails) y precio del plan pago. Deben ser coherentes con la cuota diaria de email (ver 11) | Reserva online en producción | Product owner |

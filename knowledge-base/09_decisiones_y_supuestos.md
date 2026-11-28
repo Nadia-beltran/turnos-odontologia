@@ -93,6 +93,34 @@
 **Trade-offs aceptados**: menos ejemplos y documentación de terceros para Boot 4; cambios de Jackson 3 y de los paquetes de test respecto de Boot 3. Todo el equipo usa JDK 17.
 **Decidido por**: la usuaria, el 2026-11-28 (change `c-01-backend-scaffolding`).
 
+### DD-16 — Hosting gratuito: Netlify, Render, Neon y cron-job.org
+**Decisión**:
+- **Frontend**: Netlify, con `_redirects` que reenvía `/api/*` al backend con estado 200 (mismo origen, DD-03) y *fallback* a `index.html`.
+- **Backend**: Render, plan Free con Docker (`backend/Dockerfile`).
+- **PostgreSQL**: Neon, plan Free (PG 17 con `btree_gist`).
+- **Cron externo**: cron-job.org, que envía `POST /api/internal/tick` con `X-Tick-Secret` cada 10 minutos.
+
+**Contexto**: resuelve la parte de hosting de PA-03 con los criterios de `12`. Los límites están relevados el 2026-11-28 y hay que reconfirmarlos en las páginas oficiales antes de cada cambio:
+
+| Servicio | Límite relevado | Consecuencia |
+|---|---|---|
+| Render Free | 512 MB de RAM, 0,1 CPU, 750 h/mes. Se apaga a los 15 min sin tráfico (arranque en frío cercano a 1 min). **Bloquea el SMTP saliente (25, 465 y 587) desde septiembre de 2025** | JVM con flags de poca memoria. Tick cada 10 min. Email solo por API HTTP |
+| Neon Free | 100 CU-h/mes por proyecto. Se apaga a los 5 min de inactividad y despierta en milisegundos. 0,5 a 1 GB por proyecto (las fuentes no coinciden). No vence | Pool chico sin conexiones en reposo. El tick no debe tocar la base sin medir el consumo |
+| Netlify Free | 300 minutos de build y 100 GB de transferencia por mes | Alcanza para v1 |
+| cron-job.org | Gratuito, `POST` con headers propios y aviso de fallas | — |
+
+**Alternativas consideradas**:
+- Cloudflare Pages: sin proxy 200 a dominios externos, salvo con un Worker.
+- Koyeb: pide tarjeta desde febrero de 2026.
+- Fly.io: ya no tiene plan gratuito, solo una prueba.
+- Base gratuita de Render: vence a los 30 días.
+- Supabase: se pausa después de 7 días sin actividad y no tiene backups en el plan gratuito.
+- Oracle Always Free: siempre encendido, pero pide tarjeta, la capacidad es incierta y el mantenimiento es manual.
+
+**Trade-offs aceptados**: el servicio depende de que el cron funcione para no dormirse; si falla, el paciente sufre un arranque en frío. Es una plataforma por pieza, con cuatro cuentas. El email queda **fuera de esta DD**: Render Free impide el SMTP, así que C-05 tiene que elegir un proveedor con API HTTP (PA-03, parte de email).
+**Fuentes**: changelog de Render sobre el bloqueo de SMTP; documentación de Neon sobre `btree_gist`; comparativas de planes gratuitos de 2026 (ver `docs/despliegue.md`).
+**Decidido por**: la usuaria, el 2026-11-28 (change `c-03-despliegue-esqueleto`).
+
 ---
 
 ## Supuestos inferidos
