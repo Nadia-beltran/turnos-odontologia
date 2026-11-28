@@ -1,0 +1,7 @@
+# Finales de línea uniformes para todo el equipo (design D10)
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.jar binary
+*.png binary
+*.zip binary

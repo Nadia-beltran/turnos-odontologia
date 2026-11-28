@@ -6,12 +6,12 @@
 |---|---|---|---|
 | Frontend | TypeScript sin framework | TS 5.x | Restricción de la usuaria |
 | Build del frontend | Vite | 5.x | **Suposición** (SU-01): única herramienta, sin framework de UI |
-| Backend | Spring Boot (Web, Security, Data JPA, Validation, Mail) | 3.x | Restricción de la usuaria |
-| Lenguaje del backend | Java | 21 (LTS) | **Suposición** (SU-01) |
-| Build del backend | Gradle (Kotlin DSL o Groovy) | 8.x | Restricción de la usuaria |
-| ORM | Hibernate (vía Spring Data JPA) | 6.x | Restricción de la usuaria |
+| Backend | Spring Boot (Web MVC, Security, Data JPA, Validation, Mail) sobre Spring Framework 7 | 4.2.0 | Restricción de la usuaria; versión decidida en DD-15 |
+| Lenguaje del backend | Java | 17 (LTS) | Decisión DD-15 (reemplaza la suposición SU-01) |
+| Build del backend | Gradle con Groovy DSL y wrapper | 9.9.2 | Restricción de la usuaria |
+| ORM | Hibernate (vía Spring Data JPA) | 7.4 | Restricción de la usuaria |
 | Base de datos | PostgreSQL | 15+ | Restricción de la usuaria. Requiere la extensión `btree_gist` (ver 04) |
-| Migraciones | Flyway | 10.x | **Suposición**: el esquema se versiona con migraciones, no con `ddl-auto` |
+| Migraciones | Flyway | 12.x | DD-13: el esquema se versiona con migraciones, no con `ddl-auto` |
 | Email | Proveedor SMTP o API en plan gratuito | — | Pendiente de elección (ver `11_notificaciones_email.md`) |
 | Hosting | Planes gratuitos | — | Ver `12_despliegue_y_entornos.md` |
 

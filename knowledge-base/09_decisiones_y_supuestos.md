@@ -85,13 +85,21 @@
 **Implementación**: el nombre vive en un único lugar (`design-system/brand.js` y una constante de configuración del backend para los emails) para poder cambiarlo sin tocar cada pantalla.
 **Decidido por**: la usuaria, el 2026-11-28.
 
+### DD-15 — Java 17 y Spring Boot 4.2
+**Decisión**: el backend usa Java 17 (LTS) y Spring Boot 4.2.0 (Spring Framework 7, Hibernate 7.4, Flyway 12, Jackson 3, Testcontainers 2), generado desde Spring Initializr con Gradle 9.9.2 (wrapper, Groovy DSL).
+**Contexto**: al iniciar C-01, la máquina de la responsable tenía JDK 17, y Spring Initializr ya no ofrecía Spring Boot 3.x (solo 4.0, 4.1 y 4.2).
+**Alternativas consideradas**: Java 21 (instalar otro JDK en las 5 máquinas); Spring Boot 3.x armado a mano (fuera del soporte de Initializr).
+**Justificación**: Java 17 ya está disponible y es LTS soportado por Boot 4. Boot 4.2 es la versión estable con soporte vigente.
+**Trade-offs aceptados**: menos ejemplos y documentación de terceros para Boot 4; cambios de Jackson 3 y de los paquetes de test respecto de Boot 3. Todo el equipo usa JDK 17.
+**Decidido por**: la usuaria, el 2026-11-28 (change `c-01-backend-scaffolding`).
+
 ---
 
 ## Supuestos inferidos
 
 | Código | Supuesto | Origen | Riesgo si es falso | Cómo validar |
 |---|---|---|---|---|
-| SU-01 | Java 21, Spring Boot 3.x y Vite como única herramienta del frontend | Propuesta en la KB, aceptada | Bajo: cambio de configuración | Confirmar al iniciar el repositorio |
+| SU-01 | Vite como única herramienta del frontend. ~~Java 21 y Spring Boot 3.x~~: reemplazados por DD-15 | Propuesta en la KB, aceptada | Bajo: cambio de configuración | Confirmar en C-02 |
 | SU-02 | 48 h de antelación es un buen valor por defecto para el recordatorio | DD-12 | Medio: menos confirmaciones o recordatorios olvidados | Medir confirmaciones y cancelaciones por antelación |
 | SU-03 | El email alcanza para bajar el ausentismo | Discovery (riesgo principal) | **Alto**: el diferencial no funciona | Piloto con 2 o 3 consultorios, medir antes y después (métricas de 01) |
 | SU-04 | "Token único por turno" se implementa como un token por oferta y por destinatario | Respuesta de la usuaria, interpretada | Bajo: es un cambio de diseño acotado | Confirmar con la usuaria (IN-01) |
