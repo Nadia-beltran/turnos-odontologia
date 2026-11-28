@@ -13,7 +13,10 @@ import org.testcontainers.junit.jupiter.Testcontainers;
  * <p>Sin Docker disponible, las clases que la extienden quedan omitidas (no fallan).
  * En CI el workflow exige Docker, así que ahí siempre corren.
  */
-@SpringBootTest(properties = "spring.flyway.locations=classpath:db/migration,classpath:db/testmigration")
+@SpringBootTest(properties = {
+        "spring.flyway.locations=classpath:db/migration,classpath:db/testmigration",
+        // La tarea programada no debe competir con los tests (C-05 design D8).
+        "app.tick.programado=false" })
 @Import(TestcontainersConfiguration.class)
 @Testcontainers(disabledWithoutDocker = true)
 public abstract class AbstractIntegrationTest {

@@ -24,6 +24,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	implementation 'org.thymeleaf:thymeleaf'
 	implementation 'org.flywaydb:flyway-database-postgresql'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
@@ -40,4 +41,6 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	// pgjdbc rechaza zonas como America/Buenos_Aires contra PostgreSQL 15; el sistema trabaja en UTC (RN-EX-02).
+	systemProperty 'user.timezone', 'UTC'
 }
