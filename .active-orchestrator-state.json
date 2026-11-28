@@ -133,7 +133,8 @@
         "names_versioned": false,
         "risk_reviewers": {
           "primary": "m1",
-          "backup": "m2"
+          "backup": null,
+          "note": "CODEOWNERS actualizado en main (83f34ef, 2026-11-28): solo Nadia"
         },
         "reviewer_overrides": {
           "C-01": "m2",
