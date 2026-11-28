@@ -57,11 +57,15 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-  mail:
-    host: ${SPRING_MAIL_HOST}
-    port: ${SPRING_MAIL_PORT}
-    username: ${SPRING_MAIL_USERNAME}
-    password: ${SPRING_MAIL_PASSWORD}
+    # Neon se apaga sin conexiones abiertas (design D8 de C-03).
+    hikari:
+      maximum-pool-size: 3
+      minimum-idle: 0
+  # Sin spring.mail hasta C-05: Render gratuito bloquea el SMTP saliente (DD-16).
+
+server:
+  port: ${PORT:8080}                    # Render inyecta PORT
+  forward-headers-strategy: framework   # TLS termina en Netlify/Render (X-Forwarded-Proto)
 
 app:
   base-url: ${APP_BASE_URL}

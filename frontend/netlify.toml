@@ -1,0 +1,8 @@
+# Netlify (DD-16). Configurar el sitio con "Base directory" = frontend.
+# El reenvío de /api y el fallback viven en public/_redirects (Vite lo copia a dist/).
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

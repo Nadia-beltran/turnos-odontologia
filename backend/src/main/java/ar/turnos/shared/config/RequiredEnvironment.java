@@ -11,15 +11,15 @@ import org.springframework.util.StringUtils;
  */
 public final class RequiredEnvironment {
 
-    /** Variables sin valor por defecto en el perfil prod. */
+    /**
+     * Variables sin valor por defecto en el perfil prod.
+     * Las de email (SPRING_MAIL_* o la API key del proveedor) vuelven a ser obligatorias
+     * en C-05: el hosting gratuito bloquea el SMTP saliente (DD-16).
+     */
     public static final List<String> PROD = List.of(
             "SPRING_DATASOURCE_URL",
             "SPRING_DATASOURCE_USERNAME",
             "SPRING_DATASOURCE_PASSWORD",
-            "SPRING_MAIL_HOST",
-            "SPRING_MAIL_PORT",
-            "SPRING_MAIL_USERNAME",
-            "SPRING_MAIL_PASSWORD",
             "APP_BASE_URL",
             "APP_MAIL_FROM",
             "APP_MAIL_DAILY_QUOTA",
