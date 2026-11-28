@@ -22,8 +22,8 @@ SaaS multi-tenant para odontólogos independientes con un sillón. Ataca el **au
 | ORM y migraciones | Hibernate (Spring Data JPA) + Flyway | 7.4 · 12.x |
 | Base de datos | PostgreSQL con la extensión `btree_gist` | 15+ |
 | Tests | JUnit 5 + Testcontainers (PostgreSQL real) | Testcontainers 2.0 |
-| Email | Proveedor SMTP o API gratuito (outbox) | Pendiente: PA-03 |
-| Hosting | Planes gratuitos; el frontend estático reenvía `/api/*` al backend | Pendiente: PA-03 |
+| Email | Proveedor gratuito con **API HTTP** (outbox); Render Free bloquea el SMTP | Pendiente: PA-03, se decide en C-05 |
+| Hosting | Netlify (reenvía `/api/*`), Render Free (Docker), Neon Free y cron-job.org (tick) | DD-16 |
 
 Detalle completo: [knowledge-base/02_descripcion_general.md](knowledge-base/02_descripcion_general.md)
 
@@ -47,7 +47,7 @@ La fuente de verdad del dominio vive en `knowledge-base/`. **Leé el archivo rel
 | [11_notificaciones_email.md](knowledge-base/11_notificaciones_email.md) | Emails, cuota diaria, entregabilidad |
 | [12_despliegue_y_entornos.md](knowledge-base/12_despliegue_y_entornos.md) | Entornos, hosting gratuito, *keep-alive*, CI |
 
-> ⚠️ Preguntas de prioridad **Alta** abiertas: PA-03 (hosting y email, se resuelve en C-03), PA-07 (revisión legal), PA-08 (dominio propio) y PA-01 (límites del plan gratuito). Ninguna bloquea C-01 ni C-02.
+> ⚠️ Preguntas de prioridad **Alta** abiertas: PA-03 (hosting resuelto por DD-16; falta el proveedor de email, que se decide en C-05), PA-07 (revisión legal), PA-08 (dominio propio) y PA-01 (límites del plan gratuito). Ninguna bloquea C-01 ni C-02.
 
 **Design system**: [design-system/README.md](design-system/README.md). Revisión 1 aprobada, política `system-and-mockups`.
 

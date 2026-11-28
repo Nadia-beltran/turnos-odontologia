@@ -45,7 +45,9 @@ Supuestos por turno: 1 confirmación + 1 recordatorio + 0,2 cancelaciones o repr
 
 **Conclusión**: con una cuota gratuita del orden de 300 emails por día, el sistema sostiene **menos de 10 consultorios activos**. El límite del plan gratuito (PA-01) y la elección del proveedor (PA-03) tienen que definirse en conjunto, y el plan pago debería costear un plan de email mayor.
 
-## Proveedor de email (pendiente, PA-03)
+## Proveedor de email (pendiente, PA-03, se decide en C-05)
+
+> El backend corre en Render Free (DD-16), que bloquea el SMTP saliente (puertos 25, 465 y 587). El proveedor tiene que permitir el envío por **API HTTP**. Spring Mail por SMTP no funciona en ese plan.
 
 Criterios de elección:
 

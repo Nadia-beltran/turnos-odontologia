@@ -1,13 +1,13 @@
 # Despliegue y Entornos
 
-Restricción: **presupuesto cero**. Todo corre en planes gratuitos (ver la elección pendiente en PA-03).
+Restricción: **presupuesto cero**. Todo corre en planes gratuitos. La elección está en **DD-16** y los pasos en `docs/despliegue.md`.
 
 ## Entornos
 
 | Entorno | Frontend | Backend | Base de datos | Email |
 |---|---|---|---|---|
 | Local | `vite dev`, con proxy `/api` → `localhost:8080` (configurado en `vite.config.ts`) | `./gradlew bootRun` con perfil `dev` | PostgreSQL en Docker (`docker compose`) | Servidor SMTP de prueba local (por ejemplo, Mailpit en Docker): ningún email sale a Internet |
-| Producción | Hosting estático gratuito con reenvío de `/api` | Servicio gratuito para contenedores o JVM | PostgreSQL gratuito administrado | Proveedor gratuito (ver 11) |
+| Producción | Netlify (`_redirects` reenvía `/api/*` con 200) | Render Free, Docker (`backend/Dockerfile`), tick cada 10 min desde cron-job.org | Neon Free (PG 17 con `btree_gist`) | Pendiente para C-05: proveedor con API HTTP, porque Render Free bloquea el SMTP (ver 11) |
 
 Un entorno de *staging* no entra en v1 por costo y cuotas. Las ramas se validan en local y en CI.
 

@@ -122,9 +122,10 @@ En el frontend, sin tests automáticos obligatorios en v1: solo una verificació
 | `SPRING_DATASOURCE_PASSWORD` | Contraseña de la base | — | Sí |
 | `APP_BASE_URL` | URL pública del frontend, para armar los links de los emails | `https://turnos.example.app` | No |
 | `APP_MAIL_FROM` | Remitente de los emails | `Turnos <no-reply@…>` | No |
-| `SPRING_MAIL_HOST` / `PORT` / `USERNAME` / `PASSWORD` | SMTP del proveedor de email (o `APP_MAIL_API_KEY` si se usa API) | — | Sí (credenciales) |
+| `SPRING_MAIL_HOST` / `PORT` / `USERNAME` / `PASSWORD` | SMTP del proveedor de email (o `APP_MAIL_API_KEY` si se usa API). **Opcionales en `prod` hasta C-05**: Render Free bloquea el SMTP, así que C-05 probablemente use `APP_MAIL_API_KEY` (DD-16) | — | Sí (credenciales) |
 | `APP_MAIL_DAILY_QUOTA` | Cuota diaria de envíos del plan gratuito | `300` | No |
 | `APP_ADMIN_EMAIL` / `APP_ADMIN_PASSWORD` | Administrador SaaS inicial (seed) | — | Sí |
 | `APP_INTERNAL_TICK_SECRET` | Secreto del endpoint de *keep-alive* y tick externo | — | Sí |
 | `APP_TIMEZONE_DEFAULT` | Zona horaria por defecto | `America/Argentina/Buenos_Aires` | No |
 | `SPRING_PROFILES_ACTIVE` | Perfil | `dev` / `prod` | No |
+| `PORT` | Puerto HTTP. Lo inyecta Render; si falta, se usa 8080 | `10000` | No |
