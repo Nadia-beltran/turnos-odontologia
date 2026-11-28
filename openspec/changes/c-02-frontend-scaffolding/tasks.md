@@ -36,7 +36,7 @@
 ## 7. Verificación integral
 
 - [x] 7.1 Desde un clon limpio del worktree, correr `npm ci && npm run check:reglas && npm test && npm run build` en `frontend/` y verificar que todo pasa sin errores de tipos
-- [ ] 7.2 Con el backend levantado en el perfil `dev`, verificar que `vite dev` reenvía `/api/cualquier-ruta` al backend (la respuesta es un 401 Problem Details del backend y no `index.html`)
+- [x] 7.2 Con el backend levantado en el perfil `dev`, verificar que `vite dev` reenvía `/api/cualquier-ruta` al backend (la respuesta es un 401 Problem Details del backend y no `index.html`)
 
 ## Workflow follow-up
 
