@@ -235,7 +235,7 @@ Los mockups (`design-mockups`) son prerrequisito de cada change visual: el Agent
 > Auth depende de la cola de emails (verificación y recuperación). El panel del frontend arranca apenas existe la sesión.
 
 ### [C-05] `notificaciones-outbox`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (PR #9, merge 372b884)
 - **Responsable**: m5
 - **Resultado**: una notificación encolada en una transacción llega a Mailpit, respetando prioridad, reintentos y cuota diaria; `tick` la procesa igual que la tarea programada.
 - **Zona**: `backend/src/main/java/ar/turnos/notificaciones/`, `backend/src/main/resources/templates/email/`, `backend/src/main/resources/db/migration/`
