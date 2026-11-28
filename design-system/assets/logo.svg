@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-labelledby="t d">
+  <title id="t">Logo provisorio</title>
+  <desc id="d">Marcador de posición del logo de Estudio Sonrisa. No es una marca aprobada.</desc>
+  <!-- Isotipo: cuadrado redondeado con una sonrisa -->
+  <rect x="4" y="8" width="48" height="48" rx="14" fill="#12806f"/>
+  <path d="M16 34 Q28 46 40 34" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="20" cy="24" r="3" fill="#ffffff"/>
+  <circle cx="36" cy="24" r="3" fill="#ffffff"/>
+  <!-- Rótulo de provisorio -->
+  <rect x="62" y="12" width="172" height="40" rx="8" fill="none" stroke="#b8472d" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="148" y="30" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#b8472d" letter-spacing="1">LOGO PROVISORIO</text>
+  <text x="148" y="45" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="10" fill="#6b635b">(TBD): reemplazar este archivo</text>
+</svg>

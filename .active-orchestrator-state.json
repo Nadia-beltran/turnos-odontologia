@@ -1,0 +1,450 @@
+{
+  "version": 5,
+  "step": "done",
+  "owner": "active-orchestrator",
+  "foundation": {
+    "version": 1,
+    "approved_on": "2026-11-28",
+    "order": [
+      "discovery",
+      "kb",
+      "visual-design",
+      "roadmap",
+      "task-management",
+      "team-mode",
+      "memory-policy",
+      "find-skill",
+      "registry",
+      "agents"
+    ],
+    "plan_revisions": [
+      {
+        "date": "2026-11-28",
+        "change": "Equipo de 5 personas: se suman team-mode (new) y memory-policy (variante a elegir en la fase)",
+        "approved_by": "user"
+      }
+    ],
+    "phases": {
+      "discovery": {
+        "variant": "competitors",
+        "status": "done",
+        "requires": [],
+        "outputs": [
+          "discovery/discovery.md",
+          "discovery/research/analisis-competitivo.md"
+        ],
+        "completed_on": "2026-11-28"
+      },
+      "kb": {
+        "variant": "interview",
+        "status": "done",
+        "requires": [
+          "discovery"
+        ],
+        "outputs": [
+          "knowledge-base/"
+        ],
+        "completed_on": "2026-11-28"
+      },
+      "visual-design": {
+        "variant": "system-and-mockups",
+        "status": "done",
+        "requires": [
+          "kb"
+        ],
+        "outputs": [
+          "design-system/"
+        ],
+        "completed_on": "2026-11-28"
+      },
+      "roadmap": {
+        "variant": "local-markdown",
+        "status": "done",
+        "requires": [
+          "kb"
+        ],
+        "outputs": [
+          "CHANGES.md"
+        ],
+        "completed_on": "2026-11-28"
+      },
+      "task-management": {
+        "variant": "local",
+        "status": "done",
+        "requires": [
+          "roadmap"
+        ],
+        "outputs": [
+          ".active-stack/roadmap.json"
+        ],
+        "decided_on": "2026-11-28",
+        "completed_on": "2026-11-28"
+      },
+      "find-skill": {
+        "variant": "recommend",
+        "status": "done",
+        "requires": [
+          "kb"
+        ],
+        "outputs": [],
+        "completed_on": "2026-11-28"
+      },
+      "registry": {
+        "variant": "index",
+        "status": "done",
+        "requires": [
+          "find-skill"
+        ],
+        "outputs": [
+          ".atl/skill-registry.md"
+        ],
+        "completed_on": "2026-11-28"
+      },
+      "agents": {
+        "variant": "generate",
+        "status": "done",
+        "requires": [
+          "kb",
+          "roadmap",
+          "task-management",
+          "registry"
+        ],
+        "outputs": [
+          "CLAUDE.md"
+        ],
+        "completed_on": "2026-11-28"
+      },
+      "team-mode": {
+        "variant": "new",
+        "status": "done",
+        "requires": [
+          "task-management"
+        ],
+        "outputs": [
+          ".active-stack/team.json",
+          ".github/pull_request_template.md",
+          ".github/CODEOWNERS",
+          ".gitignore",
+          "CLAUDE.md#active-stack:team-mode"
+        ],
+        "decided_on": "2026-11-28",
+        "size": 5,
+        "tracking": "local",
+        "names_versioned": false,
+        "risk_reviewers": {
+          "primary": "m1",
+          "backup": "m2"
+        },
+        "reviewer_overrides": {
+          "C-01": "m2",
+          "C-02": "m3"
+        },
+        "split_applied_on": "2026-11-28",
+        "validation": "manual con node (team.sh requiere Python, no instalado); ok",
+        "branch_protection": "ofrecida; pendiente de que la configure la dueña del repo (gh no instalado)",
+        "completed_on": "2026-11-28"
+      },
+      "memory-policy": {
+        "variant": "local",
+        "status": "done",
+        "requires": [
+          "team-mode"
+        ],
+        "outputs": [],
+        "decided_on": "2026-11-28"
+      }
+    },
+    "completed_on": "2026-11-28"
+  },
+  "visual_design": {
+    "created_by": "design-system",
+    "mode": "system-and-mockups",
+    "status": "approved",
+    "approved_on": "2026-11-28",
+    "revision": 1,
+    "path": "design-system/README.md"
+  },
+  "kb": {
+    "created_by": "kb-creator",
+    "source": "interactive",
+    "discovery": {
+      "problem": "Los odontólogos independientes con un sillón pierden ingresos por ausentismo y por turnos que quedan vacíos.",
+      "system_type": "saas_multi_tenant",
+      "domain": "salud / turnos odontológicos",
+      "scale": "multi_tenant",
+      "stack": "Spring Boot 3 (Java 21) REST + Gradle + Hibernate + PostgreSQL; frontend TypeScript vanilla + Vite",
+      "needs_infra": true
+    },
+    "files": [
+      "knowledge-base/README.md",
+      "knowledge-base/01_vision_y_objetivos.md",
+      "knowledge-base/02_descripcion_general.md",
+      "knowledge-base/03_actores_y_roles.md",
+      "knowledge-base/04_modelo_de_datos.md",
+      "knowledge-base/05_reglas_de_negocio.md",
+      "knowledge-base/06_funcionalidades.md",
+      "knowledge-base/07_flujos_principales.md",
+      "knowledge-base/08_arquitectura_propuesta.md",
+      "knowledge-base/09_decisiones_y_supuestos.md",
+      "knowledge-base/10_preguntas_abiertas.md",
+      "knowledge-base/11_notificaciones_email.md",
+      "knowledge-base/12_despliegue_y_entornos.md"
+    ]
+  },
+  "discovery": {
+    "created_by": "discovery-research",
+    "sources": [
+      "discovery/research/analisis-competitivo.md"
+    ],
+    "sources_fetched_at": "2026-11-28",
+    "competitors": [
+      {
+        "name": "DentalSoft",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Dentalink",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "AgendaPro",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "ixi",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "OCLÜ",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "DentalTec",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Odonto.ar",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Turnito",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "DENTQ",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "OdontoGRAMA",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "OdontoApp",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Doctocliq",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Dentidesk",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Clinicorp",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Clinic Cloud",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Dentally",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Curve Dental",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      },
+      {
+        "name": "Open Dental",
+        "notes_file": "discovery/research/analisis-competitivo.md"
+      }
+    ],
+    "problema": "Los odontólogos independientes con un sillón pierden ingresos por ausentismo y por turnos que quedan vacíos.",
+    "usuarios": [
+      "Odontólogo independiente con 1 sillón (cliente)",
+      "Paciente (sin cuenta)",
+      "Recepción (opcional)",
+      "Administrador del SaaS"
+    ],
+    "casos_de_uso": [
+      "Paciente reserva online sin crear cuenta",
+      "Paciente confirma, cancela o reprograma por email hasta 24 h antes",
+      "Paciente en lista de espera recibe aviso cuando se libera un turno",
+      "Odontólogo ve su agenda diaria y semanal sin solapamientos",
+      "Odontólogo registra asistencia y ve su ausentismo"
+    ],
+    "funcionalidades_necesarias": [
+      "Agenda diaria/semanal con duración por prestación, bloqueos, feriados y prevención de solapamientos",
+      "Reserva por link sin cuenta (nombre, DNI, email, teléfono)",
+      "Recordatorio por email con confirmar, cancelar y reprogramar",
+      "Lista de espera con aviso por email",
+      "Registro de asistencia y reporte de ausentismo",
+      "Ficha básica con odontograma",
+      "Roles, auditoría y exportación de datos",
+      "Multi-tenant",
+      "Plan gratuito con límites"
+    ],
+    "funcionalidades_opcionales": [
+      "Seña con Mercado Pago",
+      "WhatsApp",
+      "Recall por prestación",
+      "Cobro de suscripción del plan pago",
+      "Facturación ARCA",
+      "Obras sociales",
+      "Periodontograma y radiografías",
+      "Asistente IA",
+      "Multisede"
+    ],
+    "reglas_de_negocio": [
+      "El paciente cancela o reprograma por su cuenta solo hasta 24 h antes; después, solo el consultorio",
+      "Un turno cancelado o reprogramado libera su horario y dispara la lista de espera",
+      "Sin solapamientos en el sillón, salvo sobreturno explícito del consultorio",
+      "Una ausencia solo se registra, sin penalidad",
+      "El paciente se identifica por DNI dentro de cada consultorio"
+    ],
+    "integraciones": [
+      "Proveedor de email transaccional (plan gratuito)"
+    ],
+    "restricciones": [
+      "Frontend TypeScript vanilla",
+      "Backend Spring Boot, API REST, Gradle, Hibernate, PostgreSQL",
+      "Presupuesto cero: planes gratuitos",
+      "SaaS comercial multi-tenant",
+      "Leyes 25.326 y 26.529"
+    ],
+    "riesgos": [
+      "Efectividad del email frente a WhatsApp sin probar",
+      "Límites y entregabilidad del email gratuito",
+      "Hosting gratuito para Spring Boot",
+      "Competencia con planes gratuitos existentes",
+      "Cumplimiento normativo de datos de salud"
+    ],
+    "preguntas_abiertas": [
+      "Límites del plan gratuito y precio del plan pago",
+      "Cobro de suscripción en el MVP o no",
+      "Asignación del turno liberado: primero que acepta u orden de la lista",
+      "Recepción en el MVP",
+      "Alcance del odontograma v1",
+      "Hosting y proveedor de email"
+    ]
+  },
+  "roadmap": {
+    "created_by": "roadmap-generator",
+    "source": "CHANGES.md",
+    "changes_file": "CHANGES.md",
+    "changes": [
+      "C-01",
+      "C-02",
+      "C-03",
+      "C-04",
+      "C-05",
+      "C-06",
+      "C-07",
+      "C-08",
+      "C-09",
+      "C-10",
+      "C-11",
+      "C-12",
+      "C-13",
+      "C-14",
+      "C-15",
+      "C-16",
+      "C-17",
+      "C-18",
+      "C-19",
+      "C-20",
+      "C-21",
+      "C-22",
+      "C-23",
+      "C-24"
+    ],
+    "verified_with": "node (fichas.py no disponible: sin Python)",
+    "verified_on": "2026-11-28"
+  },
+  "skills": {
+    "recommended": [
+      {
+        "name": "supabase-postgres-best-practices",
+        "source": "supabase/agent-skills",
+        "installs": "501.2K",
+        "fit": "media: buenas prácticas de PostgreSQL (índices, consultas); orientada a Supabase, no a JPA"
+      },
+      {
+        "name": "code-review",
+        "source": "mattpocock/skills",
+        "installs": "948.5K",
+        "fit": "media: revisión de PR para el equipo; complementa el /code-review incluido"
+      },
+      {
+        "name": "web-design-guidelines",
+        "source": "vercel-labs/agent-skills",
+        "installs": "917.3K",
+        "fit": "media: guías de UI y accesibilidad; sin verificar si aplica a TS sin framework"
+      }
+    ],
+    "not_recommended": [
+      {
+        "name": "prisma-*",
+        "source": "prisma/skills",
+        "reason": "Prisma no es el ORM del proyecto (Hibernate)"
+      }
+    ],
+    "not_found": [
+      "spring boot",
+      "java",
+      "jpa/hibernate",
+      "flyway",
+      "testcontainers",
+      "vite",
+      "owasp",
+      "email",
+      "api design"
+    ],
+    "search_limits": "skills.sh: búsqueda renderizada por JavaScript, solo se leyó el leaderboard; CLI npx skills no instalada (no se descargó)",
+    "recommended_on": "2026-11-28",
+    "installed": []
+  },
+  "registry": {
+    "created_by": "skill-registry",
+    "path": ".atl/skill-registry.md",
+    "skills_count": 20,
+    "generated_on": "2026-11-28",
+    "missing": [
+      "design-mockups"
+    ]
+  },
+  "agents": {
+    "created_by": "agent-instruction",
+    "files": [
+      "CLAUDE.md"
+    ],
+    "reglas_applied": [
+      "filtro de consultorio obligatorio",
+      "migraciones Flyway nuevas, nunca editar",
+      "tests de persistencia con Testcontainers",
+      "ficha clínica y auditoría append-only",
+      "tokens hasheados y sin datos sensibles en logs/emails/URLs",
+      "emails por outbox",
+      "DTOs + Bean Validation + ProblemDetail",
+      "UTC en base, zona del consultorio al mostrar",
+      "TS estricto sin any ni innerHTML",
+      "sin frameworks UI ni recursos remotos",
+      "tokens del design-system y mockup aprobado",
+      "Conventional Commits con C-NN",
+      "sin co-autoría IA"
+    ],
+    "team_rules": true
+  }
+}

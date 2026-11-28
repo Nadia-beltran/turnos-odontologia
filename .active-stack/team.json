@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "size": 5,
+  "tracking": "local",
+  "names_versioned": false,
+  "members": [
+    { "id": "m1" },
+    { "id": "m2" },
+    { "id": "m3" },
+    { "id": "m4" },
+    { "id": "m5" }
+  ]
+}
