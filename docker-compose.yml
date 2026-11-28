@@ -1,0 +1,28 @@
+# Desarrollo local de Estudio Sonrisa (knowledge-base/12 §Entornos).
+# Las credenciales coinciden con los valores por defecto del perfil dev (backend/src/main/resources/application.yml).
+# Uso: docker compose up -d
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: turnos
+      POSTGRES_USER: turnos
+      POSTGRES_PASSWORD: turnos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U turnos -d turnos"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "1025:1025"   # SMTP: el backend envía acá en dev
+      - "8025:8025"   # Interfaz web: http://localhost:8025
+
+volumes:
+  postgres-data:

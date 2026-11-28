@@ -5,3 +5,6 @@
 
 # Skill registry (generated, local)
 .atl/
+
+# Variables de entorno locales (nunca versionar secretos)
+.env

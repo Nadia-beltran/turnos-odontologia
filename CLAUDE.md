@@ -17,11 +17,11 @@ SaaS multi-tenant para odontólogos independientes con un sillón. Ataca el **au
 | Capa | Tecnología | Versión mínima |
 |------|------------|----------------|
 | Frontend | TypeScript sin framework + Vite | TS 5.x · Vite 5.x |
-| Backend | Spring Boot (Web, Security, Data JPA, Validation, Mail) con Java | 3.x · Java 21 |
-| Build | Gradle | 8.x |
-| ORM y migraciones | Hibernate (Spring Data JPA) + Flyway | 6.x · 10.x |
+| Backend | Spring Boot (Web MVC, Security, Data JPA, Validation, Mail) con Java | 4.2.0 · Java 17 |
+| Build | Gradle (wrapper, Groovy DSL) | 9.9.2 |
+| ORM y migraciones | Hibernate (Spring Data JPA) + Flyway | 7.4 · 12.x |
 | Base de datos | PostgreSQL con la extensión `btree_gist` | 15+ |
-| Tests | JUnit + Testcontainers (PostgreSQL real) | — |
+| Tests | JUnit 5 + Testcontainers (PostgreSQL real) | Testcontainers 2.0 |
 | Email | Proveedor SMTP o API gratuito (outbox) | Pendiente: PA-03 |
 | Hosting | Planes gratuitos; el frontend estático reenvía `/api/*` al backend | Pendiente: PA-03 |
 

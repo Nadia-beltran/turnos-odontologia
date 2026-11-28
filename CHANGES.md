@@ -150,7 +150,7 @@ Los mockups (`design-mockups`) son prerrequisito de cada change visual: el Agent
 - **Resultado**: `./gradlew build` pasa en local y en CI, y un test de integración levanta PostgreSQL con Testcontainers.
 - **Zona**: `backend/`, `docker-compose.yml`, `.github/workflows/backend.yml`
 - **Scope**:
-  - Proyecto Gradle con Spring Boot 3.x, Java 21, Web, Security, Data JPA, Validation, Mail y Flyway.
+  - Proyecto Gradle con Spring Boot 4.2.0, Java 17, Web, Security, Data JPA, Validation, Mail y Flyway (DD-15).
   - Paquetes por módulo según `08` (`ar.turnos.{shared,auth,consultorio,agenda,turnos,listaespera,pacientes,clinica,notificaciones,auditoria,reportes,admin}`).
   - Perfiles `dev` y `prod`, y `application.yml` con las variables de `08 §Variables de entorno`.
   - `docker-compose.yml`: PostgreSQL 15 y Mailpit.
@@ -193,7 +193,7 @@ Los mockups (`design-mockups`) son prerrequisito de cada change visual: el Agent
 - **Resultado**: en producción, el frontend responde, `/api/health` llega al backend a través del reenvío, la cookie de prueba es de primera parte, la migración con `btree_gist` corre en la base gratuita y un cron externo llama a `/api/internal/tick`.
 - **Zona**: `frontend/public/_redirects`, `backend/src/main/java/ar/turnos/shared/`, `docs/despliegue.md`, `knowledge-base/09_decisiones_y_supuestos.md`
 - **Scope**:
-  - Elegir el hosting del frontend, el backend y PostgreSQL según los criterios de `12` (resuelve **PA-03**) y registrar la decisión como DD-15.
+  - Elegir el hosting del frontend, el backend y PostgreSQL según los criterios de `12` (resuelve **PA-03**) y registrar la decisión como una DD nueva.
   - Endpoints `GET /api/health` y `POST /api/internal/tick` (header `X-Tick-Secret`; en este change, sin lógica).
   - Despliegue del backend y del frontend con el reenvío de `/api`.
   - Variables de entorno de producción.
