@@ -30,7 +30,7 @@
 
 ## 6. Integración continua
 
-- [ ] 6.1 Crear `.github/workflows/backend.yml` (design D9: Temurin 17, caché de Gradle, `./gradlew build` en `backend/`, en PR y push a `main` con filtro de rutas). Verificar que el workflow corre en verde en el PR, incluyendo el test de Testcontainers de la tarea 3.2
+- [x] 6.1 Crear `.github/workflows/backend.yml` (design D9: Temurin 17, caché de Gradle, `./gradlew build` en `backend/`, en PR y push a `main` con filtro de rutas). Verificar que el workflow corre en verde en el PR, incluyendo el test de Testcontainers de la tarea 3.2
 
 ## 7. Documentación de decisiones
 
@@ -39,7 +39,7 @@
 
 ## 8. Verificación integral
 
-- [ ] 8.1 Correr `./gradlew build -x test` y `./gradlew test` excluyendo los tests de integración en local, abrir el PR y confirmar el CI en verde. Verificar el resultado de la ficha: `./gradlew build` pasa en CI y el test de integración levanta PostgreSQL con Testcontainers
+- [x] 8.1 Correr `./gradlew build -x test` y `./gradlew test` excluyendo los tests de integración en local, abrir el PR y confirmar el CI en verde. Verificar el resultado de la ficha: `./gradlew build` pasa en CI y el test de integración levanta PostgreSQL con Testcontainers
 
 ## Workflow follow-up
 
