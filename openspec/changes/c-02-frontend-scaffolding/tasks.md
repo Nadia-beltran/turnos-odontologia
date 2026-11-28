@@ -30,7 +30,7 @@
 ## 6. Hosting y CI
 
 - [x] 6.1 Crear `frontend/public/_redirects` con las reglas de design D8 y un comentario que pide reemplazar la URL en C-03. Verificar que `npm run build` lo copia a `dist/_redirects`
-- [ ] 6.2 Crear `.github/workflows/frontend.yml` (Node 22, `npm ci`, `check:reglas`, `test` y `build`, con filtro de rutas `frontend/**`, `design-system/**` y el workflow, igual que `backend.yml`). Verificar la sintaxis localmente y que el job pasa en el PR
+- [x] 6.2 Crear `.github/workflows/frontend.yml` (Node 22, `npm ci`, `check:reglas`, `test` y `build`, con filtro de rutas `frontend/**`, `design-system/**` y el workflow, igual que `backend.yml`). Verificar la sintaxis localmente y que el job pasa en el PR
 - [x] 6.3 Agregar a `frontend/README.md` cómo correr dev, build y tests, y la nota sobre la cookie `XSRF-TOKEN` pendiente para C-06. Verificar que los comandos documentados corren tal cual
 
 ## 7. Verificación integral
