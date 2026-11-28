@@ -145,7 +145,7 @@ Los mockups (`design-mockups`) son prerrequisito de cada change visual: el Agent
 > C-01 y C-02 arrancan en paralelo. C-03 valida el hosting gratuito lo antes posible (PA-03, de prioridad alta).
 
 ### [C-01] `backend-scaffolding`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[x]` completado (PR #1, merge 71ccc90)
 - **Responsable**: m1
 - **Resultado**: `./gradlew build` pasa en local y en CI, y un test de integración levanta PostgreSQL con Testcontainers.
 - **Zona**: `backend/`, `docker-compose.yml`, `.github/workflows/backend.yml`
